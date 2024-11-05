@@ -13,9 +13,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class CarsComponent {
   
-  newCar : Car = {
-    name : "Honda"
-  } as Car;
+  newCar : Car = {} as Car;
   
   cars: Car[] = [
     {
@@ -40,4 +38,11 @@ export class CarsComponent {
       year: 2019,
     }
   ];
+
+  saveCar(){
+    this.newCar.id = this.cars.length + 1;
+    this.cars.push(this.newCar);
+    this.newCar = {} as Car;
+  }
+
 }
