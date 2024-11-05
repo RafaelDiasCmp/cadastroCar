@@ -1,15 +1,22 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Car } from '../../Car';
+import { CarComponent } from "../car/car.component";
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-cars',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CarComponent, FormsModule],
   templateUrl: './cars.component.html',
   styleUrls: ['./cars.component.css']
 })
 export class CarsComponent {
+  
+  newCar : Car = {
+    name : "Honda"
+  } as Car;
+  
   cars: Car[] = [
     {
       id: 1,

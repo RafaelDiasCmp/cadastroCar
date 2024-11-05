@@ -6,7 +6,7 @@
         <div class="mb-3 row">
             <label for="inputName" class="col-sm-2 col-form-label">Nome:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="inputName">
+                <input type="text" class="form-control" id="inputName" [(ngModel)]="car.name" name="name" required>
             </div>
           </div>
 
@@ -14,18 +14,18 @@
           <div class="mb-3 row">
             <label for="inputAutoMaker" class="col-sm-2 col-form-label">Montadora:</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="inputAutoMaker">
+              <input type="text" class="form-control" id="inputAutoMaker" [(ngModel)]="car.automaker" name="automaker" required>
             </div>
           </div>
 
           <div class="row g-3">
             <label for="inputPrice" class="col-sm-2 col-form-label">Preço:</label>
             <div class="col">
-              <input type="number" class="form-control">
+              <input type="number" class="form-control" [(ngModel)]="car.price" name="price" required>
             </div>
             <label for="inputYear" class="col-sm-2 col-form-label">Ano:</label>
             <div class="col">
-              <input type="number" class="form-control">
+              <input type="number" class="form-control" [(ngModel)]="car.year" name="year" required>
             </div>
           </div>
 
