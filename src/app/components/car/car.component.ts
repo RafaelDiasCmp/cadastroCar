@@ -20,6 +20,10 @@ export class CarComponent {
   save(){
     this.saveEmitter.emit();
   }
+
+  update(selectedCar:Car){
+    this.car = selectedCar
+  }
   
 
 }

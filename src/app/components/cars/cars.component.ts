@@ -13,7 +13,8 @@ import { FormsModule } from '@angular/forms';
 })
 export class CarsComponent {
   
-  newCar : Car = {} as Car;
+  car : Car = {} as Car;
+  isUpdate : boolean = false;
   
   cars: Car[] = [
     {
@@ -40,9 +41,17 @@ export class CarsComponent {
   ];
 
   saveCar(){
-    this.newCar.id = this.cars.length + 1;
-    this.cars.push(this.newCar);
-    this.newCar = {} as Car;
+    
+  if(!this.isUpdate){
+    this.car.id = this.cars.length + 1;
+    this.cars.push(this.car);
+    }
+    this.car = {} as Car;
+  }
+
+  update(selectedCar:Car){
+    this.car = selectedCar;
+    this.isUpdate = true;
   }
 
 }
