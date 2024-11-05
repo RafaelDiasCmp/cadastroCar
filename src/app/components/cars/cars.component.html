@@ -1,3 +1,4 @@
+<!-- Carros Cadastrados -->
 <div class="container">
     <h3>Carros Cadastrados</h3>
     <table class="table">
@@ -12,6 +13,7 @@
         </tr>
       </thead>
       <tbody>
+        <!-- Diretiva ngFor -->
         <tr *ngFor="let car of cars">
           <td>{{ car.id }}</td>
           <td>{{ car.name }}</td>
