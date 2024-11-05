@@ -25,5 +25,8 @@ export class CarComponent {
     this.car = selectedCar
   }
   
+  remove(removeCar:Car){
+    this.car = removeCar;
+  }
 
 }

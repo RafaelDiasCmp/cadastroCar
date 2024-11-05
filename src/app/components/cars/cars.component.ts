@@ -15,38 +15,21 @@ export class CarsComponent {
   
   car : Car = {} as Car;
   isUpdate : boolean = false;
+  idCount : number = 1;
   
-  cars: Car[] = [
-    {
-      id: 1,
-      name: "Fiat",
-      automaker: "Honda",
-      price: 500000,
-      year: 2020,
-    },
-    {
-      id: 2,
-      name: "Toyota",
-      automaker: "Toyota",
-      price: 600000,
-      year: 2021,
-    },
-    {
-      id: 3,
-      name: "T-Cross",
-      automaker: "Ford",
-      price: 550000,
-      year: 2019,
-    }
-  ];
+  cars: Car[] = [];
 
   saveCar(){
     
   if(!this.isUpdate){
+    this.car.id = this.idCount;
+    this.idCount++;
     this.car.id = this.cars.length + 1;
     this.cars.push(this.car);
     }
+
     this.car = {} as Car;
+    this.isUpdate = false;
   }
 
   update(selectedCar:Car){
@@ -54,4 +37,7 @@ export class CarsComponent {
     this.isUpdate = true;
   }
 
+  remove(removeCar:Car){
+    this.cars = this.cars.filter( b => b !== removeCar);
+  }
 }
